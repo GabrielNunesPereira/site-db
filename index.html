@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DB</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">DB</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" id="loginButton">Logar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="transformation" id="base">
+        <div class="content-wrapper">
+            <div class="goku-img">
+                <img src="./img/Goku forma base.webp" alt="Imagem Goku Base">
+            </div>
+            <div class="content">
+                <p class="primeiro-titulo">Bem-vindo!</p>
+                <h2>Goku Base</h2>
+                <p class="description">
+                    Esta é a forma normal de Goku, sem transformações. Mesmo assim, ele possui uma força incrível devido aos seus treinamentos constantes.
+                </p>
+                <button onclick="location.href='gokubase.html'">Saiba Mais</button>
+            </div>
+        </div>
+        <div class="arrows">
+            <button onclick="scrollToNext(this)"><img src="./img/arrow.png" alt="Seta para baixo"></button>
+        </div>
+        
+    </section>
+
+    <section class="transformation" id="super-saiyajin">
+        <div class="content-wrapper">
+            <div class="goku-img">
+                <img src="./img/Goku_SSJ1.webp" alt="Imagem Goku Super Saiyajin">
+            </div>
+            <div class="content">
+                <h2>Super Saiyajin</h2>
+                <p class="description">
+                    O Super Saiyajin é a primeira grande transformação de Goku, aumentando drasticamente sua força e velocidade. Ele alcançou essa forma pela primeira vez após a morte de Kuririn nas mãos de Freeza.
+                </p>
+                <button onclick="location.href='gokussj1.html'">Saiba Mais</button>
+            </div>
+        </div>
+        <div class="arrows">
+            <button onclick="scrollToNext(this)"><img src="./img/arrow.png" alt="Seta para baixo"></button>
+        </div>
+        
+    </section>
+
+    <section class="transformation" id="super-saiyajin-2">
+        <div class="content-wrapper">
+            <div class="goku-img">
+                <img id="test" src="./img/gokussj2.png" alt="Imagem Goku Super Saiyajin 2">
+            </div>
+            <div class="content">
+                <h2>Super Saiyajin 2</h2>
+                <p class="description">
+                    O Super Saiyajin 2 é uma versão aprimorada da primeira forma, com eletricidade visível ao redor do corpo. Goku alcançou essa transformação durante a luta contra Majin Vegeta.
+                </p>
+                <button onclick="location.href='gokussj2.html'">Saiba Mais</button>
+            </div>
+        </div>
+        <div class="arrows">
+            <button onclick="scrollToNext(this)"><img src="./img/arrow.png" alt="Seta para baixo"></button>
+        </div>
+        
+    </section>
+
+    <section class="transformation" id="super-saiyajin-3">
+        <div class="content-wrapper">
+            <div class="goku-img">
+                <img src="./img/goku_ssj3.png" alt="Imagem Goku Super Saiyajin 3">
+            </div>
+            <div class="content">
+                <h2>Super Saiyajin 3</h2>
+                <p class="description">
+                    O Super Saiyajin 3 é uma transformação que aumenta drasticamente a força e velocidade de Goku. No entanto, consome muita energia e reduz seu tempo de luta.
+                </p>
+                <button onclick="location.href='gokussj3.html'">Saiba Mais</button>
+            </div>
+        </div>
+        <div class="arrows">
+            <button onclick="scrollToNext(this)"><img src="./img/arrow.png" alt="Seta para baixo"></button>
+        </div>
+    </section>
+
+    <section class="transformation" id="super-saiyajin-4">
+        <div class="content-wrapper">
+            <div class="goku-img">
+                <img src="./img/goku_super_saiyan_4.png" alt="Imagem Goku Super Saiyajin 4">
+            </div>
+            <div class="content">
+                <h2>Super Saiyajin 4</h2>
+                <p class="description">
+                    O Super Saiyajin 4 é uma forma que mistura os poderes de um Saiyajin com sua natureza primal. Goku atingiu essa transformação durante a luta contra Baby em Dragon Ball GT.
+                </p>
+                <button onclick="location.href='gokussj4.html'">Saiba Mais</button>
+            </div>
+        </div>
+    </section>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+    
+                <button type="submit">Entrar</button>
+
+
+            </form>
+        </div>
+    </div>
+</body>
+
+<!-- Bonequinho do Mugen -->
+<div class="mugen-container">
+    <img src="/img/mugen dragon ball.gif" alt="Bonequinho do Mugen" class="mugen-character">
+</div>
+
+<!-- Modal de login -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <form>
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+</div>
+
+<div id="clock"></div>
+
+<!-- javascrip -->
+<script>
+    
+    function scrollToNext(button) {
+        const currentSection = button.closest(".transformation");
+        let nextSection = currentSection.nextElementSibling;
+
+        while (nextSection && !nextSection.classList.contains('transformation')) {
+            nextSection = nextSection.nextElementSibling;
+        }
+
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        const loginButton = document.getElementById("loginButton");
+        const loginModal = document.getElementById("loginModal");
+        const closeModal = document.querySelector(".close");
+
+        
+        loginButton.addEventListener("click", function (event) {
+            event.preventDefault(); // Impede a navegação do link
+            loginModal.style.display = "flex";
+        });
+
+        
+        closeModal.addEventListener("click", function () {
+            loginModal.style.display = "none";
+        });
+
+        window.addEventListener("click", function (event) {
+            if (event.target === loginModal) {
+                loginModal.style.display = "none";
+
+            }
+        });
+    });
+
+
+
+function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById("clock").textContent = timeString;
+        }
+
+        
+        setInterval(updateClock, 1000);
+        updateClock();
+
+</script>
+</body>
+
+</html>
